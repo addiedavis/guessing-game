@@ -7,8 +7,11 @@ public class GuessingGameApp {
 		Scanner input = new Scanner(System.in);
 		int secretNumber = (int)(Math.random() * 10 + 1);
 
-		System.out.println("Welcome to the Gussing Game!");
-
+		System.out.println("Hello, who are you?");
+		String name = input.next();
+		
+		System.out.println("Welcome " + name + " to the Gussing Game!");
+		
 		int trys = 3;
 		System.out.println("Guss a number between 1 and 10.");
 		System.out.println("Enter 0 for a hint.\nEnter -1 to exit.");
@@ -34,7 +37,7 @@ public class GuessingGameApp {
 			}
 
 			if (numberGuessed == -1) {
-				System.out.println("Goodbye.");
+				System.out.println("Goodbye " + name + ".");
 				System.exit(0);
 			}
 
