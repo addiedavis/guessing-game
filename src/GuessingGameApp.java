@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class GuessingGameApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		Scanner input = new Scanner(System.in);
 		int secretNumber = 5;
@@ -18,11 +18,17 @@ public class GuessingGameApp {
 			int numberGuessed = input.nextInt();
 
 			while (numberGuessed == 0) {
+
+				Thread.sleep(2000);
+				System.out.println("Hmm... a hint?");
 				if (secretNumber % 2 == 0) {
+					Thread.sleep(2000);
 					System.out.println("The Secret Number is even.");
 				} else {
+					Thread.sleep(2000);
 					System.out.println("The Secret Number is odd.");
 				}
+				Thread.sleep(2000);
 				System.out.println("Please Guess a number.");
 				numberGuessed = input.nextInt();
 			}
@@ -32,11 +38,13 @@ public class GuessingGameApp {
 				System.exit(0);
 			}
 
-			trys = (trys - 1);
+			trys --;
 			if (secretNumber == numberGuessed) {
+				Thread.sleep(2000);
 				System.out.println("You guessed it, congrats!");
 				trys = 0;
 			} else {
+				Thread.sleep(2000);
 				if (secretNumber > numberGuessed) {
 					System.out.println("The number you gussed is a bit low.");
 				} else {
@@ -45,7 +53,7 @@ public class GuessingGameApp {
 				System.out.println("Sorry, you have " + trys + " left.");
 			}
 		}
-		
+
 		input.close();
 		System.out.println("Goodbye, thanks for playing!");
 		System.exit(0);
