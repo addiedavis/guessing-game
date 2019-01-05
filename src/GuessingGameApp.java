@@ -17,14 +17,14 @@ public class GuessingGameApp {
 
 			int numberGuessed = input.nextInt();
 
-			if (numberGuessed == 0) {
+			while (numberGuessed == 0) {
 				if (secretNumber % 2 == 0) {
 					System.out.println("The Secret Number is even.");
 				} else {
 					System.out.println("The Secret Number is odd.");
 				}
-				numberGuessed = input.nextInt();
 				System.out.println("Please Guess a number.");
+				numberGuessed = input.nextInt();
 			}
 
 			if (numberGuessed == -1) {
@@ -45,9 +45,10 @@ public class GuessingGameApp {
 				System.out.println("Sorry, you have " + trys + " left.");
 			}
 		}
-
-		System.exit(0);
+		
 		input.close();
+		System.out.println("Goodbye, thanks for playing!");
+		System.exit(0);
 	}
 
 }
