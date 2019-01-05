@@ -5,7 +5,7 @@ public class GuessingGameApp {
 	public static void main(String[] args) throws InterruptedException {
 
 		Scanner input = new Scanner(System.in);
-		int secretNumber = 5;
+		int secretNumber = (int)(Math.random() * 10 + 1);
 
 		System.out.println("Welcome to the Gussing Game!");
 
